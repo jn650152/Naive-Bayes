@@ -1,0 +1,16 @@
+outlook temperature Humidity Windy playTennis prediction
+sunny hot high false n n
+sunny hot high true n n
+overcast hot high false p p
+rain mild high false p p
+rain cool normal false p p
+rain cool normal true n p
+overcast cool normal true p p
+sunny mild high false n n
+sunny cool normal false p p
+rain mild normal false p p
+sunny mild normal true p p
+overcast mild high true p n
+overcast hot normal false p p
+rain mild high true n p
+accuracy : 0.785714

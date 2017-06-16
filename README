@@ -1,0 +1,60 @@
+Naive Bayes classifier:
+
+how to compile code: make
+
+how to run code: 
+./assign5
+training dataset: data1
+testing dataset: data2
+choose target: 5
+Results are saved in a file called Results.
+
+files:
+README              
+bonus_datasets: stores the dataset used for bonus      
+main.cpp: the main function file
+Results: results are saved in this file             
+functions.cpp: all functions are implemented in this file     
+makefile
+assign5: the executable             
+functions.h         
+target_statistics.h
+
+the overall code architecture:
+read inputs for training file and testing file.
+check the existence of these files.
+read training file(read_file)
+choose a target attribute
+training -> get_target_probability
+	 -> get_conditional_probability
+read testing file(read_file)
+predict -> get probabilities of different target values for each record(get_probability)
+	-> get the final prediction by comparing probabilities of different target values(get_final_target_value)
+	-> write the results to a file (write_to_file) and calculate the accuracy
+
+bonus:
+dataset:http://archive.ics.uci.edu/ml/machine-learning-databases/tic-tac-toe/
+
+result table:
+algorithm 	Naive bayes  	ID3   		  C4.5
+technique    prior probability entropy          entropy
+			       information gain information gain
+
+performance table:
+algorithm       Naive bayes     ID3               C4.5
+accuracy         0.6          0.794425   
+speed            0.00           0.01              0.01
+
+
+comments:
+Naive basye is simple to understand and easy to implement. It is fast because it doesn't take long time to traing data. But it is limitted to the dataset with independent attributes. For datasets with strongly dependent attributes, the accuracy of prediction is low.
+
+ID3: The idea is intuitive and its accuracy is high even when it works with dependent attributes. However, It takes more time to train data compared with Naive Bayes.Also, chances are overfitting when the sample tested is small.Besides, it doesn't handle numeric attributes.
+
+C4.5:It is a improved version of ID3. It can deal with both discrete and continous features. In addition, it solves overfitting by pruning. However, overfitting still can happen when it use noisy data.
+	
+
+Notes: 
+make sure the last line of dataset is not \n.
+for testing speed, run the code by ./assign5 < input
+input file records the input parameters.
